@@ -1,0 +1,21 @@
+stack=[0,0,0,0,0]
+a=0
+top=0
+while(a<=4):
+  print("Press 1 for Push ")
+  print("press 2 for Pop")
+  print("press 3 for traverse")
+  print("press 4 for Exit")
+  a=input("Please enter your choice ")
+  if(a==1):
+    n=input("enter number")
+    stack[top]=n
+    top=top+1
+  elif(a==2):
+    stack.pop()
+  elif(a==3):
+    for a in stack:
+      print(a)
+    else:
+      break;
+  

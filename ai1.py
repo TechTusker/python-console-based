@@ -1,0 +1,31 @@
+class getdata():
+    def __init__(self):
+        self.y=''
+        self.x=''
+    def register(self):
+        self.x=input("Enter name:")
+        self.y=input("Enter email:")
+        self.z=input("Enter occupation:")
+    def login(self):
+        m=input("Enter your Id:")
+        if(self.y==m):
+            print("login successful")
+        else:
+            print("invalid login")
+a=0
+obj=getdata()
+while(a<=2):
+    print("Press 1 for register")
+    print("press 2 for login")
+    print("press 3 for exit")
+    a=int(input("enter choice:"))
+    if(a==1):
+        obj.register()
+    elif(a==2):
+        obj.login()
+    else:
+        print("you have ended login!!")
+        break;
+        
+        
+        

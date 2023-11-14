@@ -1,0 +1,31 @@
+--create table author(id int primary key,name varchar(20),birth int,death int);
+--create table book(book_id int primary key, author_id int, title varchar(20), p_year int, p_house varchar(20), rating int, foreign key(author_id) references author(id));
+--create table adaptation(book_id int, type varchar(20), title varchar(20), rel_year int, rate int, foreign key(book_id) references book(book_id));
+--insert into author values(11,'ram',2002,2022);
+--insert into author values(22,'ravinder',2003,2022);
+--insert into author values(33,'hamid',2004,2022);
+--insert into author values(44,'pam',2005,NULL);
+--insert into author values(55,'chetan',2002,NULL);
+--insert into book values(100,22,'fox and lion',2020,'aa',2);
+--insert into book values(200,11,'red riding hood',2018,'bb',3);
+--insert into book values(300,55,'half girlfriend',2017,'cc',5);
+--insert into book values(400,33,'tara tales',2019,'dd',4);
+--insert into book values(500,44,'lion king',2015,'ee',5);
+--insert into adaptation values(100,'my granny','stories','run',2021,4);
+--insert into adaptation values(300,'rom-com','half girlfriend',2018,3);
+--insert into adaptation values(500,'survival','lion king',2019,5);
+--insert into adaptation values(200,'mystery','go to jungle',2020,3);
+--select book.title as title,author.name as author from book left outer join author on book.author_id = author.id;
+--select book.title as title, author.name as author, book.p_year from book right outer join author on book.author_id=author.id where book.p_year>2005;
+--select book.title as title, adaptation.title as adaptation, adaptation.rel_year, book.p_year from book join adaptation on book.book_id=adaptation.book_id where book.rating<adaptation.rate;
+--select book.title as title,book.rating as rate from book inner join author on book.author_id=author.id where author.death is NULL;
+select book.title, author.name from book full join author on book.author_id=author.id;
+--select book.title as title, author.name as author from author cross join book where author.name='chetan';
+
+
+
+
+
+
+
+

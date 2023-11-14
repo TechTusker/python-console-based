@@ -1,0 +1,98 @@
+brands=[]
+inventory=[]
+l=[]
+k=[]
+def getdata():
+    a=0
+    global brands
+    global inventory
+    for a in range (3):
+        brand=input("Enter Brand name:")
+        model=input("Enter Brand Model:")
+        brands.append(brand)
+        inventory.append(model)
+    for i in range (3):
+        l.append(brands[i]+" :: "+inventory[i])
+        k.append(brands[i]+inventory[i])
+    #print(l)
+def setdata():
+    while(True):
+        print("press a for adding new car details for eg.ford SUV")
+        print("press b for editting existing car details eg.(brand name & model)")
+        print("press c for display all cars in store")
+        print("press d for deleting car info")
+        print("press e for exitting the program")
+        a=input("Enter choice:")
+        if(a=='a' or a=='A'):
+            print("add new car details!!")
+            b=input("enter car brand-")
+            c=input("enter car model-")
+            d=b+c
+            flag=0
+            for i in k:
+               if(d==i):
+                   print("**car already exists**")
+                   flag=1
+                   break
+            if(flag==0):
+                for i in brands:
+                    if(b==i):
+                        l.append(b+" :: "+c)
+                        k.append(d)
+                        break
+            #print(l)
+        elif(a=='b'):
+            print("Edit existing car details!!")
+            print("***Enter existing car details to EDIT***")
+            B=input("enter car brand-")
+            C=input("enter car model-")
+            D=B+C
+            flag=0
+            index=-1
+            for i in k:
+                index=index+1
+                if(D==i):
+                    print("**car exists**")
+                    flag=1
+                    m=input("Enter new car model-")  
+                    break
+            if(flag==1):
+                k[index]=B+m
+                l[index]=B+" :: "+m
+            if(flag==0):
+                print("***car DOESN'T exists***")
+        elif(a=='c' or a=='C'):
+            print("***viewing ALL cars' Description***")
+            print(l)
+            print(k)
+        elif(a=='d' or a=='D'):
+            print("DELETING CAR INFORMATION!!")
+            print("***Enter existing car details to delete***")
+            B=input("Enter Car Brand-")
+            C=input("Enter Car Model-")
+            D=B+C
+            flag=0
+            for i in k:
+                if(D==i):
+                    print("***car exists***")
+                    k.remove(i)
+                    flag=1
+                    break
+            for j in l:
+                if(B+" :: "+C==j):
+                    l.remove(B+" :: "+C)
+                    break
+            if(flag==0):
+                print("***Car DOESN'T Exists***")
+        elif(a=='e' or a=='E'):
+            break           
+getdata()
+setdata()
+
+
+
+    
+    
+        
+    
+        
